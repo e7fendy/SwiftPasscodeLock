@@ -8,9 +8,9 @@ A Swift implementation of passcode lock for iOS with TouchID authentication.
 <center><img src="https://raw.githubusercontent.com/yankodimitrov/SwiftPasscodeLock/master/passcode-lock.gif" height="386"></center>
 
 ## Requirements
-* iOS 8.0+
-* Xcode 9.0+
-* Swift 4.1+
+* iOS 14.0+
+* Xcode 13.0+
+* Swift 5.0+
 
 ## Installation
 
