@@ -132,6 +132,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
         
+        deleteSignButton?.setTitle(localizedStringFor(key: "PasscodeLockDeleteButton", comment: ""), for: .normal)
+        cancelButton?.setTitle(localizedStringFor(key: "PasscodeLockCancelButton", comment: ""), for: .normal)
+        
         while self.placeholders.count != self.passcodeConfiguration.passcodeLength {
             let view = self.placeholders.popLast()
             view?.removeFromSuperview()
