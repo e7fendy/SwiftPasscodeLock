@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        passcodeLockPresenter.presentPasscodeLock()
+    }
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         passcodeLockPresenter.presentPasscodeLock()
     }

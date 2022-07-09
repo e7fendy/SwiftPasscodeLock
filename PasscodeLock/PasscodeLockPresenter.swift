@@ -45,7 +45,7 @@ public class PasscodeLockPresenter {
     public func presentPasscodeLock() {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
-        guard !isPasscodePresented else { return }
+//        guard !isPasscodePresented else { return }
         
         isPasscodePresented = true
         
