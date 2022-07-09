@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,6 @@
                 <outlet property="deleteSignButton" destination="H78-kl-y6L" id="kHt-em-QUT"/>
                 <outlet property="descriptionLabel" destination="HbT-GO-CPk" id="gtS-ky-zzI"/>
                 <outlet property="errorLabel" destination="f3V-ZL-HQk" id="aw8-vQ-exp"/>
-                <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4dc-hJ-geg"/>
@@ -31,23 +30,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
-                    <rect key="frame" x="185" y="213.5" width="44" height="29"/>
+                    <rect key="frame" x="185" y="272.5" width="44.5" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
-                    <rect key="frame" x="165.5" y="252.5" width="83.5" height="19.5"/>
+                    <rect key="frame" x="165.5" y="311.5" width="83.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="133.5" y="292" width="147" height="16"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZgW-6u-ebm">
+                    <rect key="frame" x="134" y="351" width="146" height="16"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="16" id="nwr-an-bpD"/>
+                                <constraint firstAttribute="width" secondItem="w14-Kb-Jnf" secondAttribute="height" multiplier="1:1" id="o1u-DK-JR7"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
                                     <color key="value" red="0.95294117647058818" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,27 +139,9 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="tintColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstItem="w14-Kb-Jnf" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="00q-SK-ilE"/>
-                        <constraint firstAttribute="height" constant="16" id="0rg-FM-kVz"/>
-                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="leading" secondItem="OSf-H5-f20" secondAttribute="trailing" constant="10" id="33P-aQ-rnf"/>
-                        <constraint firstItem="jlt-C0-1Ot" firstAttribute="leading" secondItem="Fhs-1e-Ysl" secondAttribute="trailing" constant="10" id="3Bw-PP-8CI"/>
-                        <constraint firstItem="OSf-H5-f20" firstAttribute="top" secondItem="w14-Kb-Jnf" secondAttribute="top" id="6eg-Qv-82V"/>
-                        <constraint firstItem="jlt-C0-1Ot" firstAttribute="top" secondItem="Fhs-1e-Ysl" secondAttribute="top" id="8Xw-cq-OcB"/>
-                        <constraint firstAttribute="width" constant="147" id="8aU-sn-a0U"/>
-                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="leading" secondItem="9Tg-dE-gH4" secondAttribute="trailing" constant="10" id="LwK-gY-EaT"/>
-                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="top" secondItem="OSf-H5-f20" secondAttribute="top" id="MnB-bE-r8B"/>
-                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="top" secondItem="9Tg-dE-gH4" secondAttribute="top" id="O8I-hs-q0Y"/>
-                        <constraint firstItem="OSf-H5-f20" firstAttribute="leading" secondItem="w14-Kb-Jnf" secondAttribute="trailing" constant="10" id="dde-Fn-Mzf"/>
-                        <constraint firstItem="YJW-U8-Yo7" firstAttribute="leading" secondItem="jlt-C0-1Ot" secondAttribute="trailing" constant="10" id="omC-px-b8x"/>
-                        <constraint firstItem="w14-Kb-Jnf" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="pkT-HZ-TAQ"/>
-                        <constraint firstItem="YJW-U8-Yo7" firstAttribute="top" secondItem="jlt-C0-1Ot" secondAttribute="top" id="tNV-xE-Ejb"/>
-                    </constraints>
-                </view>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="67" y="356" width="80" height="80"/>
+                    <rect key="frame" x="142" y="414.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="1">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -181,7 +166,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="167" y="356" width="80" height="80"/>
+                    <rect key="frame" x="192" y="414.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="2">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -206,7 +191,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="267" y="356" width="80" height="80"/>
+                    <rect key="frame" x="242" y="414.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="3">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -231,7 +216,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="67" y="448" width="80" height="80"/>
+                    <rect key="frame" x="142" y="467.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="4">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -256,7 +241,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="167" y="448" width="80" height="80"/>
+                    <rect key="frame" x="192" y="467.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="5">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -281,7 +266,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="267" y="448" width="80" height="80"/>
+                    <rect key="frame" x="242" y="467.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="6">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -306,7 +291,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="67" y="540" width="80" height="80"/>
+                    <rect key="frame" x="142" y="520.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="7">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -331,7 +316,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="167" y="540" width="80" height="80"/>
+                    <rect key="frame" x="192" y="520.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="8">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -356,7 +341,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="267" y="540" width="80" height="80"/>
+                    <rect key="frame" x="242" y="520.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="9">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -381,7 +366,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="167" y="632" width="80" height="80"/>
+                    <rect key="frame" x="192" y="573.5" width="30" height="41"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="0">
                         <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -406,7 +391,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                    <rect key="frame" x="76.5" y="657.5" width="61" height="29"/>
+                    <rect key="frame" x="126.5" y="579.5" width="61" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Cancel">
@@ -417,7 +402,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                    <rect key="frame" x="278" y="657.5" width="58" height="29"/>
+                    <rect key="frame" x="228" y="579.5" width="58" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Delete">
@@ -444,7 +429,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-ZL-HQk">
-                    <rect key="frame" x="16" y="320" width="382" height="20"/>
+                    <rect key="frame" x="16" y="379" width="382" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.97647058823529409" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -453,23 +438,21 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="centerX" secondItem="PbJ-Y8-MMf" secondAttribute="centerX" id="16E-tM-5HY"/>
+                <constraint firstItem="ZgW-6u-ebm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1KO-cd-ge0"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="top" secondItem="f3V-ZL-HQk" secondAttribute="bottom" constant="16" id="1XO-RX-maS"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="1pk-a8-KUM"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="3Jc-aw-8VW"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4dI-MF-FB1"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="leading" secondItem="CGh-ph-49t" secondAttribute="trailing" constant="20" id="6jk-5n-EC0"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="trailing" secondItem="CGh-ph-49t" secondAttribute="leading" constant="-20" id="6wf-5d-CCI"/>
-                <constraint firstItem="f3V-ZL-HQk" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="44" id="9qW-Rm-w6t"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-20" id="BIJ-v9-DKU"/>
+                <constraint firstAttribute="bottom" secondItem="0Ph-dj-v7R" secondAttribute="bottom" constant="-20" symbolic="YES" id="8W7-Lm-P6E"/>
                 <constraint firstItem="f3V-ZL-HQk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cqw-8f-lIl"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerX" secondItem="cuq-ue-Jyj" secondAttribute="centerX" id="EsN-cG-KcQ"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-10" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" id="J8o-Fg-mKp"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Jsj-Ux-qoB"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="8" id="LrD-lR-N3s"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="MLY-Mh-BhE"/>
-                <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-20" id="OLY-LF-tHd"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerX" secondItem="EUD-XB-0CR" secondAttribute="centerX" id="Ofc-zy-NxN"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Qup-3g-Gux"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="R1h-wb-tm1"/>
@@ -477,9 +460,9 @@
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerY" secondItem="PbJ-Y8-MMf" secondAttribute="centerY" id="RHb-pY-SgJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RgV-eT-vCl"/>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="12" id="Sah-YV-A2O"/>
+                <constraint firstItem="f3V-ZL-HQk" firstAttribute="top" secondItem="ZgW-6u-ebm" secondAttribute="bottom" constant="12" id="TN8-jK-iND"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="12" id="Vo4-YP-n8O"/>
-                <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="XXL-dB-dNT"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
@@ -489,7 +472,7 @@
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerY" secondItem="PbJ-Y8-MMf" secondAttribute="centerY" id="hG9-Sl-EO9"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
-                <constraint firstItem="f3V-ZL-HQk" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="12" id="lMx-ej-Bqn"/>
+                <constraint firstItem="ZgW-6u-ebm" firstAttribute="top" secondItem="HbT-GO-CPk" secondAttribute="bottom" constant="20" id="jzz-eA-04J"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="750" constant="40" id="luj-6S-dgY"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" id="naK-56-qUf"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="o0A-rK-1SQ"/>
@@ -498,29 +481,24 @@
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="uxL-V3-wEY"/>
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="v5R-tE-Ub7"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="9qW-Rm-w6t"/>
-                </mask>
-            </variation>
-            <point key="canvasLocation" x="369.56521739130437" y="434.51086956521743"/>
+            <point key="canvasLocation" x="369.56521739130437" y="433.92857142857139"/>
         </view>
     </objects>
     <designables>
         <designable name="0CR-0R-0Nr">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="9Tg-dE-gH4">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="C9Z-3u-ohd">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="CGh-ph-49t">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="EUD-XB-0CR">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="Fhs-1e-Ysl">
             <size key="intrinsicContentSize" width="16" height="16"/>
@@ -529,28 +507,28 @@
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="PbJ-Y8-MMf">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="RA8-jd-dag">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="RR4-5o-pli">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="WDx-aD-wJK">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="YJW-U8-Yo7">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="cuq-ue-Jyj">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="jlt-C0-1Ot">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="pLy-90-g1a">
-            <size key="intrinsicContentSize" width="80" height="80"/>
+            <size key="intrinsicContentSize" width="30" height="41"/>
         </designable>
         <designable name="w14-Kb-Jnf">
             <size key="intrinsicContentSize" width="16" height="16"/>

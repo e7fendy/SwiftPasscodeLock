@@ -138,6 +138,11 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         errorLabel?.isHidden = passcodeLock.state.error == nil
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
+        
+        while self.placeholders.count != self.passcodeConfiguration.passcodeLength {
+            let view = self.placeholders.popLast()
+            view?.removeFromSuperview()
+        }
 
         let currentType = LAContext().biometricType
         if currentType == .faceID {
