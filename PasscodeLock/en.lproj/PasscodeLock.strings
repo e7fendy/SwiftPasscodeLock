@@ -8,7 +8,7 @@
 
 /* Enter Passcode State */
 "PasscodeLockEnterTitle" = "Enter your passcode";
-"PasscodeLockEnterDescription" = "Your passcode is required to view your health data";
+"PasscodeLockEnterDescription" = "Your passcode is required";
 
 /* Set Passcode State */
 "PasscodeLockSetTitle" = "Enter a passcode";
