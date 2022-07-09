@@ -105,11 +105,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        
-        clearEvents()
-    }
-    
     // MARK: - View
     
     public override func viewDidLoad() {
@@ -117,8 +112,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         deleteSignButton?.isEnabled = false
-        
-        setupEvents()
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -152,30 +145,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         } else {
             touchIDButton?.setTitle("", for: .normal)
         }
-    }
-    
-    // MARK: - Events
-    
-    private func setupEvents() {
-        
-        notificationCenter?.addObserver(self, selector: #selector(appWillEnterForegroundHandler(notification:)), name: UIApplication.willEnterForegroundNotification, object: nil)
-        notificationCenter?.addObserver(self, selector: #selector(appDidEnterBackgroundHandler(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-    }
-    
-    private func clearEvents() {
-        
-        notificationCenter?.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
-        notificationCenter?.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
-    }
-    
-    @objc public func appWillEnterForegroundHandler(notification: NSNotification) {
-        
-//        authenticateWithBiometrics()
-    }
-    
-    @objc public func appDidEnterBackgroundHandler(notification: NSNotification) {
-        
-        shouldTryToAuthenticateWithBiometrics = false
     }
     
     // MARK: - Actions
