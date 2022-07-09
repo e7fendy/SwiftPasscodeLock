@@ -352,9 +352,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C99EAF531B90B05800D61E1B /* Build configuration list for PBXNativeTarget "PasscodeLock" */;
 			buildPhases = (
+				C99EAF3C1B90B05700D61E1B /* Headers */,
 				C99EAF3A1B90B05700D61E1B /* Sources */,
 				C99EAF3B1B90B05700D61E1B /* Frameworks */,
-				C99EAF3C1B90B05700D61E1B /* Headers */,
 				C99EAF3D1B90B05700D61E1B /* Resources */,
 			);
 			buildRules = (
