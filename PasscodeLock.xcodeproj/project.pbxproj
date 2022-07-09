@@ -830,7 +830,7 @@
 				DEVELOPMENT_TEAM = 454KPK3LGZ;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PasscodeLockDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yankodimitrov.PasscodeLockDemoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -846,7 +846,7 @@
 				DEVELOPMENT_TEAM = 454KPK3LGZ;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PasscodeLockDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yankodimitrov.PasscodeLockDemoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
