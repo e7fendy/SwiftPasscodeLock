@@ -71,12 +71,11 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public var dismissCompletionCallback: (()->Void)?
     public var animateOnDismiss: Bool
     public var notificationCenter: NotificationCenter?
+    public var shouldTryToAuthenticateWithBiometrics = true
     
     internal let passcodeConfiguration: PasscodeLockConfigurationType
     internal var passcodeLock: PasscodeLockType
     internal var isPlaceholdersAnimationCompleted = true
-    
-    private var shouldTryToAuthenticateWithBiometrics = true
     
     // MARK: - Initializers
     
@@ -112,13 +111,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         deleteSignButton?.isEnabled = false
-    }
-    
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         if shouldTryToAuthenticateWithBiometrics {
-        
             authenticateWithBiometrics()
         }
     }
