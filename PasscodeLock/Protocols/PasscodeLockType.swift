@@ -22,7 +22,7 @@ public protocol PasscodeLockType {
     func authenticateWithBiometrics()
 }
 
-public protocol PasscodeLockTypeDelegate: class {
+public protocol PasscodeLockTypeDelegate: AnyObject {
     
     func passcodeLockDidSucceed(lock: PasscodeLockType)
     func passcodeLockDidFail(lock: PasscodeLockType)

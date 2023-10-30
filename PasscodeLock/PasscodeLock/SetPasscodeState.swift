@@ -63,12 +63,12 @@ struct SetPasscodeState: PasscodeLockStateType {
         }
 
         // Are all items sequential ascending?
-        if numericalPasscode.map { $0 - 1 }.dropFirst() == numericalPasscode.dropLast() {
+        if numericalPasscode.map({ $0 - 1 }).dropFirst() == numericalPasscode.dropLast() {
             return false
         }
 
         // Are all items sequential decending?
-        if numericalPasscode.map { $0 + 1 }.dropFirst() == numericalPasscode.dropLast() {
+        if numericalPasscode.map({ $0 + 1 }).dropFirst() == numericalPasscode.dropLast() {
             return false
         }
 
