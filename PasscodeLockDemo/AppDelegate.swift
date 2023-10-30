@@ -33,6 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        passcodeLockPresenter.presentPasscodeLock()
+        passcodeLockPresenter.presentPasscodeLock(gotoBackground: true)
     }
 }

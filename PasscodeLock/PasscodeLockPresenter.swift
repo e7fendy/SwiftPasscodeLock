@@ -42,7 +42,7 @@ public class PasscodeLockPresenter {
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-    public func presentPasscodeLock() {
+    public func presentPasscodeLock(gotoBackground: Bool = false) {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
 //        guard !isPasscodePresented else { return }
@@ -56,6 +56,7 @@ public class PasscodeLockPresenter {
         mainWindow?.endEditing(true)
         
         let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration)
+        passcodeLockVC.shouldTryToAuthenticateWithBiometrics = !gotoBackground
         let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
         
         passcodeLockVC.dismissCompletionCallback = { [weak self] in
